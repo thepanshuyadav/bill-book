@@ -56,7 +56,7 @@ p {
   font-size: 1rem;
   padding: 8px 0px;
 }
-.inputName, .inputCost {
+.inputName, .inputCost, .inputSearch {
   min-width: min-content;
   min-height: 4vh;
   border-radius: 8px;
@@ -77,6 +77,9 @@ p {
 .addButton {
   grid-area: addButton;
   justify-self: center;
+}
+.inputSearch {
+  margin: 16px 20vw;
 }
 
 .deleteButton {
@@ -103,7 +106,12 @@ p {
   background-color: lightslategrey;
   gap: 1em;
 }
-
+.expenses{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
 .expense {
   display: flex;
   padding: 10px;

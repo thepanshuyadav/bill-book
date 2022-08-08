@@ -1,10 +1,22 @@
-function Expense({expense, removeExpense}) {
+import { useContext } from 'react'
+import {AppContext} from '../context/AppContext'
+
+function Expense(props) {
+    // why printed two times?
     // console.log(expense)
+
+    const {dispatch} = useContext(AppContext)
+     const deleteExpense = () => {
+        dispatch({
+            type: 'DELETE_EXPENSE',
+            payload: props.id
+        })
+     }
     return (
-        <div key={expense.id} className="expense">
-            <p className="expenseTitle">{expense.title}</p>
-            <p  className="expenseAmount">${expense.amount}</p>
-            <button className="deleteButton" onClick={() => removeExpense(expense.id)}>❌</button>
+        <div key={props.id} className="expense">
+            <p className="expenseTitle">{props.title}</p>
+            <p  className="expenseAmount">${props.amount}</p>
+            <button className="deleteButton" onClick={deleteExpense}>❌</button>
         </div>
     )
 }

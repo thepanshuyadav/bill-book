@@ -1,20 +1,16 @@
-import {useEffect, useState} from "react";
+import {useContext} from "react";
+import {AppContext} from "../context/AppContext"
 
-const TOTAL_BUDGET = 1000
-function Banner({expenses}) {
-    const [spent, setSpent] = useState(0)
-    useEffect(()=> {
-        let val = expenses.reduce((acc, expense) => acc + expense.amount, 0)
-        setSpent(val)
-
-    }, [expenses])
+function Banner() {
+    const {budget, expenses} = useContext(AppContext) 
+    const spent = expenses.reduce((acc, expense) => acc + expense.amount, 0)
     return (
         <div className="App-header">
             <div className="budgetCard">
-                <p>Total Budget : {TOTAL_BUDGET}</p>
+                <p>Total Budget : {budget}</p>
             </div>
             <div className="remainingCard">
-                <p>Remaining : {TOTAL_BUDGET - spent}</p>
+                <p>Remaining : {budget - spent}</p>
             </div>
             <div className="spentCard">
                 <p>Spent : {spent}</p>

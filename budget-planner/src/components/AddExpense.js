@@ -1,6 +1,8 @@
-import {useState} from "react";
+ import {useState, useContext} from "react";
+ import {AppContext} from "../context/AppContext"
 
 function AddExpense({expenses, setExpense}) {
+    const {dispatch} = useContext(AppContext)
     const [expenseTitle, setExpenseTitle] = useState("")
     const [expenseAmount, setExpenseAmount] = useState(0)
 
@@ -8,8 +10,11 @@ function AddExpense({expenses, setExpense}) {
         event.preventDefault()
         if(expenseTitle !== "" && expenseAmount > 0) {
             const expense = {title: expenseTitle, amount: expenseAmount, id: Date.now()}
-            setExpense([...expenses, expense])
-        }
+            dispatch({
+                type: "ADD_EXPENSE",
+                payload: expense
+            })
+        } 
 
     }
 
