@@ -1,6 +1,7 @@
 import {createContext, useReducer} from "react";
 
 const initialState = {
+    customerFormVisible: false,
     customers: [],
     items: []
 }
@@ -11,6 +12,11 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 customers: [...action.payload]
+            }
+        case 'CUSTOMER_VIEW_TOGGLE':
+            return {
+                ...state,
+                customerFormVisible: !state.customerFormVisible
             }
         default:
             return state
@@ -25,6 +31,7 @@ export const AppProvider = (props) => {
         <AppContext.Provider value={
             {
                 customers: state.customers,
+                customerFormVisible: state.customerFormVisible,
                 dispatch
             }}>
             {props.children}

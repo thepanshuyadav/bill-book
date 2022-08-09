@@ -1,23 +1,36 @@
 import './App.css';
-import {AppBar, IconButton, Toolbar, Typography} from "@mui/material";
+import PersonIcon from '@mui/icons-material/Person';
+import DescriptionIcon from '@mui/icons-material/Description';
+import StarIcon from '@mui/icons-material/Star';
 import {CustomerList} from "./views/CustomerList";
-import {AppProvider} from "./context/AppContext";
+import {AppContext} from "./context/AppContext";
+import {useContext} from "react";
+import {CustomerForm} from "./views/CustomerForm";
 
+const navBarData = [
+    {title: 'Customers', icon: <PersonIcon/>},
+    {title: 'Items', icon: <StarIcon/>},
+    {title: 'Invoices', icon: <DescriptionIcon/>}
+]
 function App() {
+    const {customerFormVisible} = useContext(AppContext)
   return (
-      <AppProvider>
+
           <div>
-              <AppBar position="sticky" className="App-bar">
-                  <Typography variant="h4">Bill Book</Typography>
-              </AppBar>
+              <div className="App-bar">
+                  <h1>Bill Book</h1>
+              </div>
               <div className="App">
-                  <div className="App-nav"></div>
+                  <div className="App-nav">
+                      {navBarData.map((navBarItem) => (
+                          <button className="Nav-button" key={navBarItem.title}>{navBarItem.icon}<p>{navBarItem.title}</p></button>
+                      ))}
+                  </div>
                   <div className="App-main">
-                      <CustomerList/>
+                      {customerFormVisible ? <CustomerForm/> : <CustomerList/>}
                   </div>
               </div>
           </div>
-      </AppProvider>
   );
 }
 
