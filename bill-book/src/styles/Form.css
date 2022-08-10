@@ -1,0 +1,63 @@
+.Form-card {
+    height: fit-content;
+    width: fit-content;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border: #7c4dff 2px solid;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.Form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-content: end;
+    align-items: end;
+}
+.Form-field-container{
+    display: flex;
+    flex-direction: column;
+}
+.Modal-cancel-button {
+    background-color: var(--warning);
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+input {
+    min-height: 5vh;
+    min-width: 20vw;
+    padding: 8px;
+    font-size: 1rem;
+    margin: 8px;
+    border-radius: 8px;
+    border: 1px var(--primary) solid;
+}
+
+label {
+    font-size: 1rem;
+    margin: 8px;
+    text-transform: capitalize;
+}
+
+.Error-message {
+    color: var(--warning);
+    margin-left: 8px;
+    font-size: 0.7rem;
+    display: none;
+}
+
+input:invalid[focused=true] {
+    border: 1px var(--warning) solid;
+
+}
+
+input:invalid[focused=true] ~ .Error-message {
+    display: block;
+
+}

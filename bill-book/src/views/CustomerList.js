@@ -1,9 +1,10 @@
-import {AppTable} from "../common/AppTable";
+import  {AppTable} from "../common/table/AppTable";
 import {useEffect, useContext} from "react";
 import axios from "axios";
 import {AppContext} from "../context/AppContext";
 import {ListViewHeader} from "../common/ListViewHeader";
 import AddIcon from "@mui/icons-material/Add";
+import '../styles/Table.css'
 
 
 const CUSTOMER_TABLE_TITLES = ["Name", "Phone", "Email", "Created On"]
@@ -27,7 +28,7 @@ export const CustomerList = () => {
 
     function toggleVisibility() {
         dispatch({
-            type: 'CUSTOMER_VIEW_TOGGLE'
+            type: 'OPEN_MODAL'
         })
     }
 

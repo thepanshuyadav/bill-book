@@ -5,18 +5,26 @@
 }
 :root {
   --primary: #7c4dff;
+  --warning: red;
   --light-background: #dce0f5;
   --font-family: "Helvetica Neue", serif;
 }
+body {
+  /*TODO: Web safe font*/
+  font-family: var(--font-family);
+}
+
 .App {
   display: flex;
 }
+
 .App-bar {
   padding: 20px;
   text-align: center;
   background-color:var(--primary);
   color: white;
 }
+
 .App-nav {
   flex: 2;
   position: sticky;
@@ -25,85 +33,62 @@
   background-color: whitesmoke;
   border-right: lightgrey 1px solid;
 }
+
 .App-main {
   flex: 8;
   background-color: var(--light-background);
-  min-height: 100vh;
+  min-height: 90vh;
 }
+
 button {
   display: flex;
   align-items: center;
   border: none;
   font-size: 1rem;
-  /*TODO: Web safe font*/
-  font-family: var(--font-family);
 }
+
 .Nav-button {
   background-color: whitesmoke;
   padding: 20px 20px;
   justify-content: flex-start;
 }
+
 .Nav-button:focus {
   background-color: var(--light-background);
   color: var(--primary);
   transition: .2s ease-in;
   border-left: var(--primary) 3px solid;
 }
-.App-button {
+
+.App-button, input[type=submit] {
   background-color: var(--primary);
   font-weight: bold;
   font-size: 1rem;
+  border: none;
   color: white;
   padding: 10px 20px;
   justify-content: center;
   border-radius: 5px;
-
 }
+
 .Nav-button p, .App-button p {
   margin-left: 10px;
 }
+
 .Listview-header {
   padding: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.Table-container {
-  padding: 20px;
-}
-
-table {
+.Modal-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  /*width: 100vw;*/
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
-  border-collapse: collapse;
-  box-shadow: 0 5px 10px lightgrey;
-  background-color: whitesmoke;
-  border-radius: 20px;
-}
-
-thead {
-  box-shadow: 0 5px 10px lightgrey;
-  background-color: #7c4dff;
-  color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-th {
-  padding: 20px 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-size: 0.8rem;
-  border-bottom: 2px lightgrey solid;
-}
-td {
-  padding: 20px 20px;
-}
-
-tr {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr 1fr;
-}
-
-tr:nth-child(even) {
-  background-color: var(--light-background);
+  justify-content: center;
+  align-items: center;
 }

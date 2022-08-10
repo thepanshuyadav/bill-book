@@ -1,7 +1,12 @@
 import {createContext, useReducer} from "react";
 
 const initialState = {
-    customerFormVisible: false,
+    openModal: false,
+    customerFormFields: {
+        name: "",
+        email: "",
+        phone: ""
+    },
     customers: [],
     items: []
 }
@@ -13,11 +18,18 @@ const AppReducer = (state, action) => {
                 ...state,
                 customers: [...action.payload]
             }
-        case 'CUSTOMER_VIEW_TOGGLE':
+        case 'OPEN_MODAL':
+            console.log("from open modal")
             return {
                 ...state,
-                customerFormVisible: !state.customerFormVisible
+                openModal: !state.openModal
             }
+        case 'CUSTOMER_FORM_CHANGE':
+            return {
+                ...state,
+                customerFormFields: action.payload
+            }
+
         default:
             return state
     }
@@ -31,7 +43,8 @@ export const AppProvider = (props) => {
         <AppContext.Provider value={
             {
                 customers: state.customers,
-                customerFormVisible: state.customerFormVisible,
+                openModal: state.openModal,
+                customerFormFields: state.customerFormFields,
                 dispatch
             }}>
             {props.children}

@@ -13,7 +13,7 @@ const navBarData = [
     {title: 'Invoices', icon: <DescriptionIcon/>}
 ]
 function App() {
-    const {customerFormVisible} = useContext(AppContext)
+    const {openModal} = useContext(AppContext)
   return (
 
           <div>
@@ -27,7 +27,11 @@ function App() {
                       ))}
                   </div>
                   <div className="App-main">
-                      {customerFormVisible ? <CustomerForm/> : <CustomerList/>}
+                      <div>
+                          {openModal && <div className="Modal-bg"><CustomerForm className="Modal"/> </div> }
+                          <CustomerList/>
+                      </div>
+
                   </div>
               </div>
           </div>
