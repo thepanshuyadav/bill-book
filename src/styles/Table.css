@@ -1,0 +1,135 @@
+.Table-container {
+    padding: 20px;
+}
+
+@keyframes bg-color-animation {
+    from {
+        background-color: var(--light-background);
+    }
+    to {
+        background-color: whitesmoke
+    }
+}
+
+
+table {
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px lightgrey;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    animation-name: bg-color-animation;
+    animation-duration: 2s;
+    width: 100%;
+}
+
+thead {
+    box-shadow: 0 5px 10px lightgrey;
+    background-color: var(--primary);
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 2px lightgrey solid;
+}
+
+th {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+    align-content: center;
+}
+
+th, td {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+
+tr {
+    padding: 20px 10px;
+    display: grid;
+    justify-content: center;
+    column-gap: 8px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+tr[type=customer] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 2fr;
+}
+
+tr[type=customer-select] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 0.7rem;
+}
+
+tr[type=item] {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+tr[type=item-select] {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    font-size: 0.7rem;
+}
+
+
+tr[type=invoice] {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr 1fr 1fr;
+}
+
+tr[type=invoice-items] {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr 1fr;
+}
+
+.status-unpaid {
+    text-align: center;
+    background-color: rgba(255, 255, 0, 0.8);
+    padding: 4px 8px;
+    border: rgba(255, 200, 0) 1px solid;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+}
+
+.status-paid {
+    text-align: center;
+    background-color: rgba(0, 255, 0, 0.8);
+    border: rgba(0, 153, 0) 1px solid;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-background);
+}
+
+.Table-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.Select-pagination {
+    /*min-height: 5vh;*/
+    /*min-width: 5vh;*/
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px lightgrey;
+    border: none;
+}
+
+.Icon-pagination {
+    padding: 5px;
+}

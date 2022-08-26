@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-right: lightgrey 1px solid;
+    border-top: lightgrey 1px solid;
+    margin-top: 10vh;
+    position: fixed;
+    min-height: 90vh;
+    width: 20vw;
+}
+
+.Nav-link, .Nav-link-selected {
+    text-decoration: none;
+}
+
+.Nav-link button {
+    width: 100%;
+    padding: 20px 20px;
+    justify-content: flex-start;
+    background-color: whitesmoke;
+}
+.Nav-link-selected button {
+    width: 100%;
+    padding: 20px 20px;
+    justify-content: flex-start;
+    background-color: var(--light-background);
+    color: #7c4dff;
+    border-left: var(--primary) 3px solid;
+}

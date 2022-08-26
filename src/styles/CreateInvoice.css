@@ -1,0 +1,162 @@
+.Create-invoice-container {
+    display: grid;
+    grid-template-areas:
+            'customer date'
+            'items items'
+            'notes summary';
+    grid-template-columns: 2fr 3fr;
+    justify-content: center;
+    align-items: start;
+    grid-gap: 20px;
+    min-width: 100%;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.Create-invoice-container > form, textarea {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px lightgrey;
+    font-family: var(--font-family);
+    background-color: whitesmoke;
+    border: lightgrey 1px solid;
+}
+
+.Customer-container {
+    grid-area: customer;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px lightgrey;
+    background-color: whitesmoke;
+    border: lightgrey 1px solid;
+
+}
+
+.Customer-container > button {
+    background-color: whitesmoke;
+    color: #7c4dff;
+}
+
+.Customer-detail > p {
+    padding: 5px;
+}
+
+.Customer-bill-to {
+    color: grey;
+}
+
+.Select-container {
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    overflow-y:scroll;
+    height: 60%;
+}
+
+.Select-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.Invoice-detail {
+    grid-area: date;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px lightgrey;
+    background-color: whitesmoke;
+    border: lightgrey 1px solid;
+}
+
+.Invoice-detail p {
+    margin-left: 8px;
+}
+
+.Item-detail {
+    grid-area: items;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px lightgrey;
+    background-color: whitesmoke;
+    border: lightgrey 1px solid;
+}
+
+.Item-detail-row {
+    padding: 5px 10px
+}
+
+.item-quantity {
+    min-height: 5vh;
+    min-width: 50px;
+    width: 100px;
+    padding: 8px;
+}
+
+.Invoice-notes {
+    grid-area: notes;
+    background-color: white;
+    min-height: 15vh;
+}
+
+.Invoice-summary {
+    grid-area: summary;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px lightgrey;
+    background-color: whitesmoke;
+    border: lightgrey 1px solid;
+}
+
+.Invoice-summary-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.Invoice-summary-item-amount {
+    justify-self: end;
+}
+
+.Invoice-summary-table {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.Invoice-summary-row {
+    grid-template-columns: 4fr 1fr 1fr;
+    background-color: whitesmoke;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.Delete-button {
+    background-color: transparent;
+    color: rgba(255, 0, 0, 0.7);
+
+}
+
+.Delete-button:hover {
+    opacity: 1;
+    color: red;
+}
+
+.Delete-button:active {
+    transform: translateY(-4px);
+}
+
+.Item-detail-add-button {
+    margin-top: 20px;
+    background-color: whitesmoke;
+    color: var(--primary);
+}
