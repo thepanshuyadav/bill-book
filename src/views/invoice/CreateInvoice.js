@@ -15,7 +15,7 @@ import {
     newInvoiceNotesSelector, newInvoiceReferenceSelector
 } from "../../store/store";
 
-
+// eslint-disable-next-line no-extend-native
 Date.prototype.unix = function () {
     return this.getTime() / 1000
 }

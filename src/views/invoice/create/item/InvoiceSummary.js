@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps*/
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {newInvoiceItemsSelector, newInvoiceTotalAmountSelector} from "../../../../store/store";
@@ -27,6 +28,7 @@ export const InvoiceSummary = () => {
                                     <td className="Invoice-summary-item-amount">{item.amount * item.quantity}</td>
                                 </tr>)
                             }
+                            return <></>
                         }
                     )}
                     </tbody>

@@ -1,6 +1,8 @@
+
 import {DISPATCH_ACTIONS} from "../../utils/constants";
 
 
+// eslint-disable-next-line no-extend-native
 Date.prototype.date = function () {
     let mm = this.getMonth() + 1; // getMonth() is zero-based
     let dd = this.getDate();
