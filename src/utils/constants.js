@@ -4,7 +4,8 @@ import DescriptionIcon from "@mui/icons-material/Description";
 
 export const regex = {
     name: /^[a-zA-Z1-9 ,.'-]+$/i,
-    phone: /^[d{10}]$/,
+    detail: /^[a-zA-Z\d\s,'-]*$/,
+    phone: /^\d{10}$/,
     number: /^(\d+(\.\d+)?)$/,
     email: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i,
 }

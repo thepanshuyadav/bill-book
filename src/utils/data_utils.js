@@ -62,12 +62,12 @@ export const structureCustomerRequestData = (formFields) => {
 export const validateCustomerFields = (customerFields) => {
     return regex.name.test(customerFields.name) &&
         regex.email.test(customerFields.email) &&
-        regex.name.test(customerFields.address) &&
-        regex.phone.test(customerFields.phone_number)
+        regex.detail.test(customerFields.address) &&
+        regex.phone.test(customerFields.contact)
 }
 export const validateItemFields = (itemFields) => {
     return regex.name.test(itemFields.name) &&
-        regex.name.test(itemFields.description) &&
+        regex.detail.test(itemFields.description) &&
         regex.number.test(itemFields.stock) &&
         regex.number.test(itemFields.amount)
 }

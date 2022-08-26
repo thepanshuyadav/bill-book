@@ -87,8 +87,8 @@ test("add customer valid", async () => {
     const inputPhone = screen.getByTestId("contact")
     const inputAddress = screen.getByTestId("address")
 
-    userEvent.type(inputName, "Test User 5")
-    expect(inputName).toHaveValue("Test User 5")
+    userEvent.type(inputName, "Test User")
+    expect(inputName).toHaveValue("Test User")
 
     userEvent.type(inputPhone, "1234567812")
     expect(inputPhone).toHaveValue("1234567812")
@@ -96,8 +96,8 @@ test("add customer valid", async () => {
     userEvent.type(inputAddress, "Some random address")
     expect(inputAddress).toHaveValue("Some random address")
 
-    userEvent.type(inputEmail, "test_user@test.com")
-    expect(inputEmail).toHaveValue("test_user@test.com")
+    userEvent.type(inputEmail, "user@test.com")
+    expect(inputEmail).toHaveValue("user@test.com")
 
     // eslint-disable-next-line testing-library/no-unnecessary-act
     await act(async () => {
@@ -176,17 +176,6 @@ test("add customer invalid", async () => {
 
     expect(form).toBeInTheDocument()
     expect(modalBg).toBeInTheDocument()
-})
-
-test("customer no data fetched", () => {
-    // eslint-disable-next-line testing-library/no-unnecessary-act
-    render(
-        <Provider store={store}>
-            <CustomerList/>
-        </Provider>)
-
-    expect(screen.getByRole("heading", {level: 2})).toHaveTextContent("No data")
-
 })
 
 test("customer data fetched", async () => {
