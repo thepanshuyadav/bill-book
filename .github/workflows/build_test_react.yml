@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 15.x]
+        node-version: [16.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -23,8 +23,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm ci, build and test
-        run: |
-          npm ci
-          npm run build --if-present
-          npm test
+      - name: Install NPM Dependencies
+        run: npm i --force
+      - name: test project test files
+        run: npm run test
+      - name: test playwright test file
+        run: npx playwright test
+      - name: Build Project
+        run: npm run build --if-present
