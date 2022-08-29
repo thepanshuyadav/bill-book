@@ -12,7 +12,7 @@ test('add item flow: valid data', async ({ page }) => {
   await expect(addNewItem).toBeVisible();
   await addNewItem.click();
 
-  
+
   const heading = await page.locator('text=Add new item');
   expect(heading).toBeVisible()
   const nameInput = await page.locator('input[name="name"]')
@@ -58,7 +58,7 @@ test('add item flow: invalid data', async ({ page }) => {
   await expect(addNewItem).toBeVisible();
   await addNewItem.click();
 
-  
+
   const heading = await page.locator('text=Add new item');
   expect(heading).toBeVisible()
   const nameInput = await page.locator('input[name="name"]')
@@ -92,7 +92,7 @@ test('add item flow: invalid data', async ({ page }) => {
   });
 
   await submitItemForm.click();
-  
+
   const newRows = page.locator('tr[data-testid="data-row"]')
   await expect(newRows).toHaveCount(6)
 });
